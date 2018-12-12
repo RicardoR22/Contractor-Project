@@ -1,0 +1,19 @@
+<!-- views/partials/donation-form.handlebars -->
+
+<form action="/charities/donations" method="post">
+    <input type="hidden" value="{{charity._id}}" name="charityId">
+    <fieldset>
+    <legend>Add a Donation</legend>
+
+    <!-- Donation Amount -->
+    <div class="form-group">
+      <label for="donationAmount">Donation Amount</label><br>
+      <input type="number" name="donationAmount" />
+    </div>
+    </fieldset>
+
+    <!-- BUTTON -->
+    <div class="form-group">
+    <button class="btn btn-primary" type="submit">Save Donation</button>
+    </div>
+</form>

@@ -15,5 +15,18 @@
         <p><form method="POST" action="/charities/{{charity._id}}?_method=DELETE">
             <button type="submit">Delete</button>
         </form></p>
+
+        <hr>
+
+    <!-- Donation form -->
+    {{> donation-form}}
+
+    <hr>
+
+    <!-- Show Comments -->
+    {{#each donations}}
+      {{> donation}}
+    {{/each}}
+
     </div>
 </div>

@@ -1,5 +1,6 @@
 //charities.js
 const Charity = require('../models/charity');
+const Donation = require('../models/donation');
 
 module.exports = function(app) {
 //Index
@@ -31,7 +32,11 @@ module.exports = function(app) {
   //show
   app.get('/charities/:id', (req, res) => {
       Charity.findById(req.params.id).then((charity) => {
-        res.render('charities-show', { charity: charity })
+          // fetch its comments
+        Donation.find({ charityId: req.params.id }).then(donations => {
+          // respond with the template with both values
+          res.render('charities-show', { charity: charity, donations: donations })
+        })
       }).catch((err) => {
         console.log(err.message);
       })
@@ -63,6 +68,6 @@ module.exports = function(app) {
       }).catch((err) => {
           console.log(err.message)
       })
-  })  
+  })
 
 }
