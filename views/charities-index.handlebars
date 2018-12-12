@@ -1,0 +1,10 @@
+<!-- charities-index -->
+<h1>Charities</h1>
+
+<a href="/charities/new">New Charity</a>
+
+{{#each charities}}
+  <h2><a href="/charities/{{this._id}}">{{this.charityName}}</a></h2>
+  <strong>Donation Amount: ${{this.donationAmount}}</strong><br>
+  <small>{{this.date}}</small>
+{{/each}}

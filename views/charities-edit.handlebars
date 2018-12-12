@@ -1,0 +1,13 @@
+<!-- views/charities-edit.handlebars -->
+
+<form method="POST" action="/charities/{{charity._id}}?_method=PUT">
+  {{> charities-form}}
+
+<!-- Button -->
+<p>
+    <button type="submit">Save Donation </button>
+    <br>
+    <a href="/">Cancel</a>
+
+</p>
+</form>
