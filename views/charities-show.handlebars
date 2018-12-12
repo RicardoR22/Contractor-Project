@@ -2,8 +2,18 @@
 
 <a href="/">Back to Home</a>
 
-<h1>{{charity.charityName}}</h1>
-<h2>Donation Amount: ${{charity.donationAmount}}</h2>
-<p>{{charity.date}}</p>
 
-<p><a href="/charities/{{charity._id}}/edit">Edit</a> <a href="/">Cancel</a></p> 
+<div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+        <h1>{{charity.charityName}}</h1>
+        <h2>Donation Amount: ${{charity.donationAmount}}</h2>
+        <p>{{charity.date}}</p>
+
+        <p><a href="/charities/{{charity._id}}/edit">Edit</a> <a href="/">Cancel</a></p>
+
+        <!-- Delete button -->
+        <p><form method="POST" action="/charities/{{charity._id}}?_method=DELETE">
+            <button type="submit">Delete</button>
+        </form></p>
+    </div>
+</div>

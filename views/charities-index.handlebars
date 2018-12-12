@@ -1,10 +1,22 @@
 <!-- charities-index -->
 <h1>Charities</h1>
 
-<a href="/charities/new">New Charity</a>
+<br>
+<br>
+<div class="row">
+    {{#each charities}}
+        <div class="col-md-3">
 
-{{#each charities}}
-  <h2><a href="/charities/{{this._id}}">{{this.charityName}}</a></h2>
-  <strong>Donation Amount: ${{this.donationAmount}}</strong><br>
-  <small>{{this.date}}</small>
-{{/each}}
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">{{this.charityName}}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Donation Amount:</h6>
+                <p class="card-text">${{this.donationAmount}}</p>
+                <p class="card-text">{{this.date}}</p>
+                <a href="/charities/{{this._id}}" class="card-link">Donation Info</a>
+              </div>
+            </div>
+
+        </div>
+    {{/each}}
+</div>
