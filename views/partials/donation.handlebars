@@ -4,5 +4,11 @@
   <div class="card-block">
     <h4 class="card-title">Donation Amount: ${{this.donationAmount}}</h4>
     <p class="card-text">{{this.date}}</p>
+
+    <!-- Delete link -->
+    <p><form method="POST" action="/charities/donations/{{this._id}}?_method=DELETE">
+        <button class="btn btn-danger" type="submit" style="float:right">Delete</button>
+    </form></p>
+
   </div>
 </div>

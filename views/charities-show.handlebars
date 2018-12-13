@@ -1,6 +1,6 @@
 <!-- views/charities-show.handlebars -->
 
-<a href="/">Back to Home</a>
+<a href="/" >Back to Home</a>
 
 
 <div class="row">
@@ -9,11 +9,11 @@
         <h2>Donation Amount: ${{charity.donationAmount}}</h2>
         <p>{{charity.date}}</p>
 
-        <p><a href="/charities/{{charity._id}}/edit">Edit</a> <a href="/">Cancel</a></p>
-
+        <br>
         <!-- Delete button -->
         <p><form method="POST" action="/charities/{{charity._id}}?_method=DELETE">
-            <button type="submit">Delete</button>
+            <a class="btn btn-secondary" href="/charities/{{charity._id}}/edit">Edit</a>
+            <button class="btn btn-danger" type="submit" style="float:right">Delete</button>
         </form></p>
 
         <hr>
@@ -26,6 +26,7 @@
     <!-- Show Comments -->
     {{#each donations}}
       {{> donation}}
+      <br>
     {{/each}}
 
     </div>
